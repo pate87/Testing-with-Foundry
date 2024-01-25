@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.23;
+pragma solidity ^0.8.20;
 
 import {Test, console2} from "forge-std/Test.sol";
 import {HelloWorld} from "../src/HelloWorld.sol";
@@ -12,7 +12,6 @@ contract HelloWorldTest is Test {
     }
 
     function testGreet() public {
-        assertEq(helloWorld.greet(), 
-        "Hello World!");
+        assertEq(helloWorld.greet(), "Hello World!");
     }
 }

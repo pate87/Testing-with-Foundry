@@ -11,7 +11,6 @@ contract CounterTest is Test {
         counter = new Counter();
     }
 
-
     /**
      * Test inc function
      */
@@ -21,10 +20,10 @@ contract CounterTest is Test {
     }
 
     /**
-    * It is important to write Fail to testing for failures
-    * - This test is testing whether there is an error no matter which one
-    * - Works for fast testing but isn't percise 
-    */
+     * It is important to write Fail to testing for failures
+     * - This test is testing whether there is an error no matter which one
+     * - Works for fast testing but isn't percise
+     */
     function testFailDec() public {
         counter.dec();
     }
@@ -43,7 +42,7 @@ contract CounterTest is Test {
      * To use stdError it's necessary to import it else there is an error message `Undeclared identifier`
      */
     function test_Reevert_Underflow_dec() public {
-        vm.expectRevert(stdError.arithmeticError);       
+        vm.expectRevert(stdError.arithmeticError);
         counter.dec();
     }
 
