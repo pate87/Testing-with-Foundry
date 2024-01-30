@@ -11,7 +11,6 @@ interface IWETH {
 }
 
 contract ForkTest is Test {
-
     IWETH private weth;
 
     function setUp() public {
@@ -19,12 +18,12 @@ contract ForkTest is Test {
     }
 
     function testWeth() public {
-        uint balBefor = weth.balanceOf(address(this));
+        uint256 balBefor = weth.balanceOf(address(this));
         console.log("balance before: ", balBefor);
 
         weth.deposit{value: 100}();
 
-        uint balAfter = weth.balanceOf(address(this));
+        uint256 balAfter = weth.balanceOf(address(this));
         console.log("balance after: ", balAfter);
     }
 }
