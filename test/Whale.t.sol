@@ -6,7 +6,6 @@ import "forge-std/console.sol";
 import "../src/interfaces/IERC20.sol";
 
 contract WhaleTest is Test {
-
     IERC20 public dai;
 
     function setUp() public {
@@ -16,19 +15,19 @@ contract WhaleTest is Test {
     function testDeposit() public {
         address alice = address(1234);
 
-        uint balBefor = dai.balanceOf(alice);
+        uint256 balBefor = dai.balanceOf(alice);
         console.log("Alice's balance before: ", balBefor / 1e18);
 
-        uint totalBefore = dai.totalSupply();
+        uint256 totalBefore = dai.totalSupply();
         console.log("total before: ", totalBefore / 1e18);
 
         // Mint tokens and transfer to Alice
         deal(address(dai), alice, 1e6 * 1e18, true);
 
-        uint balAfter = dai.balanceOf(alice);
+        uint256 balAfter = dai.balanceOf(alice);
         console.log("Alice's balance after: ", balAfter / 1e18);
 
-        uint totalAfter = dai.totalSupply();
+        uint256 totalAfter = dai.totalSupply();
         console.log("total after", totalAfter / 1e18);
     }
 }
