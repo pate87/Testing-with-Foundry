@@ -51,7 +51,6 @@ contract FuzzTest is Test {
         assertLe(x, 10);
 
         //
-
         uint256 i = bit.mostSignificantBit(x);
         assertEq(i, testMostSignificantBit(x));
     }
